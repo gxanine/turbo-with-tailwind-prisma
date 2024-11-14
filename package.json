@@ -1,21 +1,35 @@
 {
+  "$schema": "https://json.schemastore.org/package.json",
+  "name": "with-tailwind-prisma",
   "private": true,
+  "prisma": {
+    "schema": "packages/database/prisma/schema.prisma",
+    "seed": "tsx packages/database/src/seed.ts"
+  },
   "scripts": {
     "build": "turbo build",
+    "db:migrate:deploy": "turbo db:migrate:deploy",
+    "db:push": "turbo db:push",
+    "db:seed": "turbo db:seed",
     "dev": "turbo dev",
     "lint": "turbo lint",
     "type-check": "turbo type-check",
     "clean": "turbo clean",
     "format": "prettier --write \"**/*.{ts,tsx,md}\""
   },
+  "prettier": {
+    "tabWidth": 2
+  },
   "devDependencies": {
+    "@prisma/client": "^5.10.2",
     "prettier": "^3.2.5",
     "prettier-plugin-tailwindcss": "^0.5.11",
+    "prisma": "^5.10.2",
+    "tsx": "4.19.1",
     "turbo": "^2.2.3"
   },
-  "packageManager": "pnpm@8.15.6",
+  "packageManager": "pnpm@9.11.0",
   "engines": {
     "node": ">=18"
-  },
-  "name": "with-tailwind"
+  }
 }

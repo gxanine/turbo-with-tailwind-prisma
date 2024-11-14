@@ -1,0 +1,17 @@
+volumes:
+  database:
+    driver: local
+
+services:
+  mysql:
+    platform: linux
+    image: mysql
+    container_name: turborepo_mysql
+    restart: always
+    ports:
+      - 3306:3306
+    environment:
+      MYSQL_DATABASE: turborepo
+      MYSQL_ALLOW_EMPTY_PASSWORD: 1
+    volumes:
+      - database:/var/lib/mysql

@@ -8,5 +8,8 @@
   "devDependencies": {
     "@repo/typescript-config": "workspace:*",
     "tailwindcss": "^3.4.1"
+  },
+  "dependencies": {
+    "eslint": "^9.14.0"
   }
 }

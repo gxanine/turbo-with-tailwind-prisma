@@ -1,4 +1,5 @@
 {
+  "$schema": "https://json.schemastore.org/package.json",
   "name": "@repo/ui",
   "version": "0.0.0",
   "sideEffects": [
@@ -8,8 +9,17 @@
     "dist"
   ],
   "exports": {
-    "./styles.css": "./dist/index.css",
-    "./card": "./src/card.tsx"
+    "./components": "./src/components/index.ts",
+    "./styles.css": "./dist/index.css"
+  },
+  "imports": {
+    "#actions/*": "./src/actions/*.ts",
+    "#atoms/*": "./src/components/atoms/*.tsx",
+    "#molecules/*": "./src/components/molecules/*.tsx",
+    "#organisms/*": "./src/components/organisms/*.tsx"
+  },
+  "prettier": {
+    "tabWidth": 2
   },
   "license": "MIT",
   "scripts": {
@@ -22,13 +32,19 @@
     "react": "^18.2.0"
   },
   "devDependencies": {
+    "@repo/database": "workspace:*",
     "@repo/eslint-config": "workspace:*",
     "@repo/tailwind-config": "workspace:*",
     "@repo/typescript-config": "workspace:*",
+    "@types/node": "^20.11.24",
     "@types/react": "^18.2.61",
+    "@types/react-dom": "^18.2.19",
     "autoprefixer": "^10.4.18",
     "postcss": "^8.4.35",
     "tailwindcss": "^3.4.1",
     "typescript": "5.5.4"
+  },
+  "dependencies": {
+    "eslint": "^9.14.0"
   }
 }
