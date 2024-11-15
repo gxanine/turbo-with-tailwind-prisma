@@ -5,6 +5,8 @@
     "esModuleInterop": true
   },
   "include": [
-    "**/*.mjs"
+    "**/*.mjs",
+    "packages/config-jest/next.jest.config.ts",
+    "packages/config-jest/jest.config.ts"
   ]
 }
